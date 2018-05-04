@@ -1,0 +1,14 @@
+/* TABLE RANKING EXTENDED */
+
+.ue-c-table-ranking {
+    &__th,
+    &__td {
+        &.has-gap {
+            padding-right: 18px;
+            padding-left: 0;
+        }
+        &.is-subgroup {
+            color: #666;
+        }
+    }
+}

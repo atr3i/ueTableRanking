@@ -1,0 +1,223 @@
+/* TABLE RANKING BASE */
+
+.ue-c-table-ranking-container {
+    box-sizing: border-box;
+    padding: var(--ue-table-ranking-container-padding, 16px);
+    max-width: var(--ue-table-ranking-container-width, auto);
+    display: block;
+}
+
+.ue-c-table-ranking {
+    color: black;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-collapse: collapse;
+    font-size: var(--ue-table-ranking-font-size, 0.8rem);
+    font-family: var(--ue-table-ranking-font-family);
+
+    .is-hidden-text {
+        @include hide;
+    }
+
+    .is-marked {
+        font-weight: bold;
+    }
+
+    .is-hidden,
+    [data-type="substanding"] {
+        display: none;
+    }
+
+    .is-visible {
+        display: block;
+    }
+
+    &__caption {
+        text-align: left;
+        color: black;
+        font-weight: var(--ue-table-ranking-caption-weight, bold);
+        font-size: var(--ue-table-ranking-caption-font-size, 0.9rem);
+        margin-bottom: 0.5rem;
+        width: 100%;
+        @include hide;
+    }
+
+    &__thead,
+    &__tbody {
+        box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        background: white;
+    }
+
+    &__thead {
+        border-bottom: 1px solid;
+        border-bottom-color: var(--ue-table-ranking-border-bottom-color, black);
+
+        .ue-c-table-ranking__tr {
+            border-bottom-color: var(--ue-table-ranking-border-bottom-color, black);
+        }
+
+        .ue-c-table-ranking__th {
+            vertical-align: bottom;
+            background: var(--ue-table-ranking-th-background, #fff);
+            text-transform: uppercase;
+        }
+
+        .ue-c-table-ranking__th:not(.is-marked) {
+            font-weight: normal;
+        }
+
+        .ue-c-table-ranking__tr:first-child .ue-c-table-ranking__th:nth-child(2),
+        .ue-c-table-ranking__tr:first-child .ue-c-table-ranking__th:nth-child(3),
+        .ue-c-table-ranking__tr:first-child .ue-c-table-ranking__th:nth-child(4) {
+            border-bottom-style: solid;
+            border-bottom-color: var(--ue-table-ranking-border-th-color, black);
+            border-bottom-width: var(--ue-table-ranking-border-bottom-width, 3px);
+            font-weight: bold;
+        }
+    }
+
+    &__tr {
+        border: 0;
+
+        &.even {
+            background: var(--ue-c-table-zebra-stripes, whitesmoke);
+        }
+    }
+
+    &__th,
+    &__td {
+        padding: 0.4em;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    &__abbr {
+        text-decoration: none;
+    }
+
+    &__tbody {
+
+        .ue-c-table-ranking__th {
+            font-weight: normal;
+            &:first-child {
+                width: 50px;
+                max-width: 50px;
+                height: var(--ue-table-ranking-first-child-height, 48px);
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    // &__tbody,
+    &__position {
+        display: block;
+        box-sizing: border-box;
+        font-weight: bold;
+        min-height: var(--ue-table-ranking-position-height, 36px);
+        min-width: 45px;
+        padding-top: var(--ue-table-ranking-position-padding, 0.6em);
+        text-align: center;
+        width: 100%;
+        border-left: 6px solid #e1e1e1;
+    }
+
+    &__th.is-main {
+        max-width: 7em;
+        @include ellipsis;
+        text-align: left;
+    }
+
+    &__team-badge {
+        width: var(--ue-table-ranking-badge-width, 24px);
+        float: left;
+        padding-right: 0.5em;
+        display: var(--ue-table-ranking-display-badge, inline-block);
+    }
+
+    &__team-name {
+        text-align: left;
+        line-height: 1.8em;
+    }
+
+
+    &__legend {
+        list-style-type: none;
+        text-align: left;
+        display: var(--ue-table-ranking-legend-display, flex);
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding: 0.5em 0;
+        margin: 0;
+
+        li {
+            padding: 0.2em;
+            margin-bottom: 0.5em;
+            width: var(--ue-table-ranking-legend-item-width, 48%);
+            font-weight: normal;
+            font-size: var(--ue-table-ranking-legend-font-size, 0.8rem);
+            font-family: var(--ue-table-ranking-font-family, Roboto);
+            @include ellipsis;
+        }
+    }
+
+    &__legend-marker {
+        padding-left: 0.5em;
+        border-left: 5px solid lightgrey;
+    }
+
+}
+
+
+.champions_league {
+    border-color: var(--ue-table-ranking-champions-league, #09a751);
+}
+
+.champions_league_qualifying {
+    border-color: var(--ue-table-ranking-champions-league-qualifying, #c2e9d4);
+}
+
+.promotion {
+    border-color: var(--ue-table-ranking-promotion, #09a751);
+}
+
+.playoff_promotion {
+    border-color: var(--ue-table-ranking-playoff-promotion, #c2e9d4);
+}
+
+.europa_cup {
+    border-color: var(--ue-table-ranking-europa-cup, #ffc72b);
+}
+
+.playoff_relegation {
+    border-color: var(--ue-table-ranking-playoff-relegation, #fbcfcd);
+}
+
+.relegation {
+    border-color: var(--ue-table-ranking-relegation, #ee4036);
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 479px) and (orientation: portrait) {
+    .can-be-hidden {
+        display: none;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+    
+    --ue-table-ranking-legend-item-width: 32%;
+    --ue-table-ranking-display-badge: inline-block;
+
+    .ue-c-table-ranking__th.is-main {
+        max-width: 15em;
+        width: 15em;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+
+    --ue-table-ranking-font-size: 16px;
+    --ue-table-ranking-legend-item-width: 15%;
+}

@@ -1,0 +1,48 @@
+@mixin hide {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+}
+
+@mixin override-hide {
+  position: relative;
+  height: auto;
+  width: auto;
+  overflow: visible;
+  clip: initial;
+  clip-path: none;
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.is-hidden-text {
+	@include hide;
+}
+
+.lightbox_shadow {
+	z-index: 2;
+}
+
+.is-hidden {
+	display: none;
+}
+
+.is-visible {
+	display: block;
+}
+
+.u-ellipsis {
+	@include ellipsis;
+}
+
+
+
+
+

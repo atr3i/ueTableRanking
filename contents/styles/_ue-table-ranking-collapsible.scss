@@ -1,0 +1,113 @@
+/* TABLE RANKING COLLAPSIBLE */
+
+.ue-c-table-ranking--accordion {
+    font-size: var(--ue-table-ranking-accordion-font-size, 12px);
+    font-family: var(--ue-table-ranking-accordion-font-family);
+
+    .ue-c-table-ranking__tr {
+        border-style: solid;
+        border-bottom-width: var(--ue-table-ranking-accordion-border-bottom-width, 1px);
+        border-bottom-color: var(--ue-table-ranking-accordion-border-bottom-color, #e1e1e1);
+    }
+
+    .ue-c-table-ranking__thead .ue-c-table-ranking__th {
+        padding: 0.50rem 0.3rem;
+    }
+
+    .ue-c-table-ranking__tbody .ue-c-table-ranking__th {
+        position: relative;
+    }
+
+    .ue-c-table-ranking__tbody .ue-c-table-ranking__th:first-child {
+        width: 40px;
+        vertical-align: top;
+    }
+    
+    .ue-c-table-ranking__th {
+        padding: 0.2em;
+        &.is-main {
+            height: 42px;
+            max-width: 9em;
+            width: 9em;
+        }
+    }
+
+    .ue-c-table-ranking__position {
+        min-width: 35px;
+        min-height: 42px;
+        border-left-width: 4px;
+        padding-top: 1em;
+    }
+
+    .ue-c-table-ranking__team-badge {
+        display: var(--ue-table-ranking-display-badge, none);
+        color: transparent;
+    }
+
+    .ue-c-table-ranking__team-name {
+        width: 100%;
+    }
+
+    .ue-c-table-ranking__home,
+    .ue-c-table-ranking__away {
+        text-align: left;
+        text-transform: uppercase;
+        display: block;
+        padding: 1em 0;
+        padding-left: 0;
+    }
+
+    .ue-c-table-ranking__more {
+        font-size: 11px;
+        font-weight: normal;
+        text-transform: lowercase;
+        text-decoration: none;
+    }
+
+    .ue-c-table-ranking__toggle {
+        display: block;
+        background: none;
+        width: 100%;
+        height: 40px;
+        padding: 0;
+        margin: 0;
+        border: 0;
+
+        div {
+            fill: black;
+            display: flex;
+            -webkit-transition: -webkit-transform .15s ease-in-out;
+            -ms-transition: -ms-transform .15s ease-in-out;
+            transition: transform .15s ease-in-out; 
+            transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            svg {
+                width: var(--ue-table-ranking-arrow-width, 20px);
+            }
+        }
+    }
+
+    .ue-c-table-ranking__tr[data-show="true"] {
+        -webkit-transition: -webkit-transform .15s ease-in-out;
+        -ms-transition: -ms-transform .15s ease-in-out;
+        transition: transform .15s ease-in-out; 
+        .ue-c-table-ranking__toggle div {
+           transform: rotate(90deg);
+           -ms-transform: rotate(90deg);
+           -webkit-transform: rotate(90deg);
+        }
+    }
+
+    .ue-c-table-ranking__td.is-toggle {
+        width: 36px;
+        min-width: 36px;
+        box-sizing: border-box;
+        border-left: 1px solid #e1e1e1;
+        vertical-align: top;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+    --ue-table-ranking-display-badge: inline-block;
+}
