@@ -111,3 +111,6 @@
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
     --ue-table-ranking-display-badge: inline-block;
 }
+@media only screen and (min-width: 1224px) {
+    --ue-table-ranking-display-badge: inline-block;
+}
